@@ -7,7 +7,9 @@ As well as being here to care for my chilli I am also doing this to learn more a
 ## The Enviromental Control
 The enviromentl control system consists of an Arduino Nano with a BMP180 sensor, probably to be changed to a DHT22 AM2302 sensor for the hygrometer. I have then implimented a parallel PID control loop to maintain the temperature at the correct values for day and night time (discussion below). The PID loop was initially tuned by the Ziegler–Nichols method but this may be upgraded to some kind of software tuning as I become more frustrated waiting for it to tune.
 
-The next step is to work out a way to change the humidity of the enclosure. I will also be adding some kind of lighting.
+Update: lighting has now been added. If the pot has diameter 18cm and the required light intensity is as bellow then we need ~500 lumens of light. I have some 250 lumen LEDs so am using them with another of the led drivers.
+
+The next step is to work out a way to change the humidity of the enclosure. 
 
 As it stands the electronics consist of:
 - Arduino Nano Every
@@ -18,17 +20,18 @@ As it stands the electronics consist of:
 - Mains plug and cable
 - 240v pipe heater (? not sure what this is called, it is designed to go around a metal pipe I think. Will be adding some kind of heatsink inside)
 - 24v 4040 fan
-- 12v LED driver (for the fan, wrong voltage but works)
+- 2x12v LED driver (wrong voltage for the fan but works)
 - Rocker switch for mains circut
+- 2x250 lumen LEDs
 
-Wiring diagram to follow but BMP attatches to arduino as [this](https://lastminuteengineers.com/bmp180-arduino-tutorial/) tutorial. The relay is then attatched over A2 and GND on the switch side and the other side in the live wire of the mains circute. The mains cable is attactched to the LED driver and the heater in parallel and the fan connected to the driver. The rocker switch is in series with the SSR.
+Wiring diagram to follow but BMP attatches to arduino as [this](https://lastminuteengineers.com/bmp180-arduino-tutorial/) tutorial. The relay is then attatched over A2 and GND on the switch side and the other side in the live wire of the mains circute. The mains cable is attactched to the LED driver and the heater in parallel and the fan connected to the driver. The rocker switch is in series with the SSR. Another LED driver is attatched directly to the mains wiring and the two LEDs in parallel to the driver.
 
 ## The Container
 Origionally the plan was to make a cubic container out of acrylic. When I discovered that acrylic would cost ~10x more than the plant cost I immediatly scrapped the idea. The container I have settled on is a clear plastic bag with a frame to hold it off the top of the plant with a lid to allow it to be watered. 
 
-All of the parts can be printed in PLA/PETG except for the heater duct which ** must ** be printed in PC otherwise it will melt.
+All of the parts can be printed in PLA/PETG except for the heater duct which **must** be printed in PC otherwise it will melt.
 
-The design also needs 3xM5 nut and bolts and a large clear bag.
+The design also needs 3xM5, 4xM3x16 nut and bolts and a large clear bag.
 
 ## Ideal Conditionss
 From this [paper](https://academicjournals.org/journal/JHF/article-full-text-pdf/73E1C1341288) we can see from their limited range of contitions that chillis grew best in the winter in the shade. This meant that they were at an average of 30.1 degrees centigrade, 67.1% humidity and 18333.74 lux light intensity.
@@ -39,4 +42,4 @@ This [page](https://www.rhs.org.uk/advice/profile?pid=664) suggests that 15 degr
 
 This [instructable](https://www.instructables.com/id/12-Tips-on-Growing-Hot-Chilli-Peppers-in-a-Cold-Cl/) says 27 to 32 degrees and that stability is important. They also suggest that you should only water with warm water. 
 
-There seems to be a lot of disagreement 
+There seems to be a lot of disagreement but I will go with 30 degrees during the day and 20 degrees at night.
