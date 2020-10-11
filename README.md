@@ -8,7 +8,7 @@ Also, any suggestions for a better name are welcome.
 
 ## The Enviromental Control
 The enviromentl control system consists of an Arduino Nano with a DHT22 sensor. I have then implimented a parallel PID control loop to maintain the temperature at the correct values for day and night time (discussion below). The PID loop was initially tuned by the Ziegler–Nichols method but this may be upgraded to some kind of software tuning as I become more frustrated waiting for it to tune.
-
+![The electronics before any casing](images/electronics.JPG)
 Update: lighting has now been added. If the pot has diameter 18cm and the required light intensity is as bellow then we need ~500 lumens of light. I have some 250 lumen LEDs so am using them with another of the led drivers.
 
 The next step is to work out a way to change the humidity of the enclosure. 
@@ -33,7 +33,7 @@ Wiring diagram to follow but temp sensor attatches to D3, GND and power on the a
 ## The Container
 Origionally the plan was to make a cubic container out of acrylic. When I discovered that acrylic would cost ~10x more than the plant cost I immediatly scrapped the idea. The container I have settled on is a clear plastic bag with a frame to hold it off the top of the plant with a lid to allow it to be watered. 
 
-All of the parts can be printed in PLA/PETG except for the heater duct which **must** be printed in PC otherwise it will melt.
+All of the parts can be printed in PLA/PETG except for the heater duct which **must** be printed in PC otherwise it will melt. My printer is still not printing reliably so I haven't got roudn to this bit yet.
 
 The design also needs 3xM5, 4xM3x16 nut and bolts and a large clear bag.
 
