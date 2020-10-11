@@ -1,4 +1,4 @@
-# Chilli House
+# SPICE-Space Programmed to Incite Chilli Enlargement
 ## The Plan
 The optimal conditions to grow chillis in seems to be 25 to 30 degrees centigrade and ~60% humidity. The aim of SPICE is to provide this for my chilli plant in a draughty and not very well insulated room. SPICE will consist of a container (probably made from some kind of clear plastic sheet and 3d printed parts) and an enviromental control system that can warm and humidify the plant. Automated watering may also be added at some point in the future.
 
