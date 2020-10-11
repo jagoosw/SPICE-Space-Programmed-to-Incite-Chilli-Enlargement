@@ -4,8 +4,10 @@ The optimal conditions to grow chillis in seems to be 25 to 30 degrees centigrad
 
 As well as being here to care for my chilli I am also doing this to learn more about control theory/programming and to practice system design.
 
+Also, any suggestions for a better name are welcome.
+
 ## The Enviromental Control
-The enviromentl control system consists of an Arduino Nano with a BMP180 sensor, probably to be changed to a DHT22 AM2302 sensor for the hygrometer. I have then implimented a parallel PID control loop to maintain the temperature at the correct values for day and night time (discussion below). The PID loop was initially tuned by the Ziegler–Nichols method but this may be upgraded to some kind of software tuning as I become more frustrated waiting for it to tune.
+The enviromentl control system consists of an Arduino Nano with a DHT22 sensor. I have then implimented a parallel PID control loop to maintain the temperature at the correct values for day and night time (discussion below). The PID loop was initially tuned by the Ziegler–Nichols method but this may be upgraded to some kind of software tuning as I become more frustrated waiting for it to tune.
 
 Update: lighting has now been added. If the pot has diameter 18cm and the required light intensity is as bellow then we need ~500 lumens of light. I have some 250 lumen LEDs so am using them with another of the led drivers.
 
@@ -14,7 +16,7 @@ The next step is to work out a way to change the humidity of the enclosure.
 As it stands the electronics consist of:
 - Arduino Nano Every
 - Jumper cables
-- BMP180 sensor
+- DHT22
 - SSR
 - Switch
 - Mains plug and cable
@@ -23,8 +25,10 @@ As it stands the electronics consist of:
 - 2x12v LED driver (wrong voltage for the fan but works)
 - Rocker switch for mains circut
 - 2x250 lumen LEDs
+- 6 long kabab sticks
+- SSD1306 screen 
 
-Wiring diagram to follow but BMP attatches to arduino as [this](https://lastminuteengineers.com/bmp180-arduino-tutorial/) tutorial. The relay is then attatched over A2 and GND on the switch side and the other side in the live wire of the mains circute. The mains cable is attactched to the LED driver and the heater in parallel and the fan connected to the driver. The rocker switch is in series with the SSR. Another LED driver is attatched directly to the mains wiring and the two LEDs in parallel to the driver.
+Wiring diagram to follow but temp sensor attatches to D3, GND and power on the arduino. The relay is then attatched over D2 and GND on the switch side and the other side in the live wire of the mains circute. The mains cable is attactched to the LED driver and the heater in parallel and the fan connected to the driver. The rocker switch is in series with the SSR. Another LED driver is attatched directly to the mains wiring and the two LEDs in parallel to the driver.
 
 ## The Container
 Origionally the plan was to make a cubic container out of acrylic. When I discovered that acrylic would cost ~10x more than the plant cost I immediatly scrapped the idea. The container I have settled on is a clear plastic bag with a frame to hold it off the top of the plant with a lid to allow it to be watered. 

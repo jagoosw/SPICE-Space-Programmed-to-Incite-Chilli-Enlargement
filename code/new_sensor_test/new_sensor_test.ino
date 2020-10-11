@@ -1,39 +1,34 @@
-/* 
-   DHT11 Temperature and Humidity Sensor With Arduino
-   For more details, visit: https://techzeero.com/arduino-tutorials/dht11-with-arduino/
-*/
+#include <SimpleDHT.h>
 
-#include <dht.h>
+// for DHT11, 
+//      VCC: 5V or 3V
+//      GND: GND
+//      DATA: 2
+int pinDHT22 = 3;
+SimpleDHT22 dht22(pinDHT22);
 
-#define dht_pin 3    // Analog Pin A0 of Arduino is connected to DHT11 out pin
- 
-dht DHT;
-
-#include <Adafruit_BMP085.h>
-
-Adafruit_BMP085 bmp;
-
-void setup()
-{
-  Serial.begin(9600);
-  delay(500);
-  Serial.println("DHT11 Humidity & temperature Sensor\n\n");
-  delay(1000);
-
+void setup() {
+  Serial.begin(115200);
 }
- 
-void loop()
-{
-    DHT.read11(dht_pin);
-    
-    Serial.print("Humidity = ");
-    Serial.print(DHT.humidity);
-    Serial.print("%    ");
-    Serial.print("Temperature = ");
-    Serial.print(DHT.temperature); 
-    Serial.print(" C");
-    Serial.print(bmp.readTemperature());
-    Serial.println("C");
-    
-    delay( 1000); //Reduce Time for Quick Reply 
+
+void loop() {
+  // start working...
+  Serial.println("=================================");
+  Serial.println("Sample DHT11...");
+  
+  // read without samples.
+  byte temperature = 0;
+  byte humidity = 0;
+  int err = SimpleDHTErrSuccess;
+  if ((err = dht22.read(&temperature, &humidity, NULL)) != SimpleDHTErrSuccess) {
+    Serial.print("Read DHT22 failed, err="); Serial.println(err);delay(1000);
+    return;
+  }
+  
+  Serial.print("Sample OK: ");
+  Serial.print((int)temperature); Serial.print(" *C, "); 
+  Serial.print((int)humidity); Serial.println(" H");
+  
+  // DHT11 sampling rate is 1HZ.
+  delay(1500);
 }
