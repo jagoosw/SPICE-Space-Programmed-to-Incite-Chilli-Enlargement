@@ -1,4 +1,4 @@
-# SPICE-Space Programmed to Incite Chilli Enlargement
+# Chilli House
 ## The Plan
 The optimal conditions to grow chillis in seems to be 25 to 30 degrees centigrade and ~60% humidity. The aim of SPICE is to provide this for my chilli plant in a draughty and not very well insulated room. SPICE will consist of a container (probably made from some kind of clear plastic sheet and 3d printed parts) and an enviromental control system that can warm and humidify the plant. Automated watering may also be added at some point in the future.
 
@@ -27,8 +27,9 @@ As it stands the electronics consist of:
 - 2x250 lumen LEDs
 - 6 long kabab sticks
 - SSD1306 screen 
+- 100^o C Thermal Fuse
 
-Wiring diagram to follow but temp sensor attatches to D3, GND and power on the arduino. The relay is then attatched over D2 and GND on the switch side and the other side in the live wire of the mains circute. The mains cable is attactched to the LED driver and the heater in parallel and the fan connected to the driver. The rocker switch is in series with the SSR. Another LED driver is attatched directly to the mains wiring and the two LEDs in parallel to the driver.
+Wiring diagram to follow but temp sensor attatches to D3, GND and power on the arduino. The relay is then attatched over D2 and GND on the switch side and the other side in the live wire of the mains circute. The mains cable is attactched to the LED driver and the heater in parallel and the fan connected to the driver. The rocker switch is in series with the SSR. Another LED driver is attatched directly to the mains wiring and the two LEDs in parallel to the driver. The thermal fuse is in series with the incomming live wire and I will put it some what away from the heater so if it catches fire it trips.
 
 ## The Container
 Origionally the plan was to make a cubic container out of acrylic. When I discovered that acrylic would cost ~10x more than the plant cost I immediatly scrapped the idea. The container I have settled on is a clear plastic bag with a frame to hold it off the top of the plant with a lid to allow it to be watered. 
