@@ -1,5 +1,4 @@
 
-//Probably will rewrite at some point where there are no delays and instead it has timings and loops continuously -https://learn.adafruit.com/multi-tasking-the-arduino-part-1/a-classy-solution
 
 #include "DHT.h"
 
@@ -96,14 +95,14 @@ int heat_time(float target,float k_p,float k_i,float k_d,float bias){
   return co/10;
 }
 float target;
-float k_u=50;
+float k_u=50;//This needs retuning
 float t_u=14;
 float k_p=60;//0.6*k_u;
 float k_i=0;//1.2*k_u/t_u;
 float k_d=0;//3*k_u*t_u/40;
 float bias = 0;
 int step_count;
-int poll_interval=2000;//Hopefully this saves the overflow problems of millis but I cba to test
+int poll_interval=2000;//The maximum polling speed of the sensor is ~2 seconds
 void loop() {
   if(millis()>check_time+poll_interval){
     history[zero_position]=dht.readTemperature();
